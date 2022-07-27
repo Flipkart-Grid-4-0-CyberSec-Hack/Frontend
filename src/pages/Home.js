@@ -6,7 +6,7 @@ export const Home = () => {
             <Bar/>
             <RepoInput/>
             <VulnerabilityDisplay/>
-            <Footer/>
+            <Footer/>  
         </div>
     )
 }
