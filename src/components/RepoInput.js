@@ -19,8 +19,8 @@ export const RepoInput = (props) => {
                 sx={{'width':'500px'}}
                         required
                         id="outlined-required"
-                        label="Source Url"
-                        helperText={"Ex https://github.com/zricethezav/gitleaks"}
+                        label="Source URL"
+                        helperText={"E.g.: https://github.com/zricethezav/gitleaks"}
         />       <Button onClick={()=>{
                 if(props.validate(props.url)){
                     setValid(false);

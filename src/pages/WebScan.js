@@ -65,8 +65,8 @@ const WebScan = ()=>{
           required
           onChange={(e)=>setUrl(e.target.value)}
           id="outlined-required"
-          label="Web Application Uri"
-          helperText={"Ex : https://www.example.com"}
+          label="Web Application URI"
+          helperText={"E.g.: https://www.example.com"}
         />
             <Typography variant="h3" fontWeight="bold" sx={{my:5}}>Web App Scanner</Typography>
          <Container sx={{minHeight:'50vh'}}>
