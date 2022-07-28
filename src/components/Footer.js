@@ -34,7 +34,7 @@ export const Footer = () => {
             <p className="pr-5 text-white-50">
               Scan all the repositories for the possible vulnebralities.
             </p>
-            <p>
+            <p> 
               <a href="#">
                 <i className="fa fa-facebook-square mr-1"></i>
               </a>
