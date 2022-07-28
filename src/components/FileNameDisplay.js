@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,6 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {Button} from '@mui/material'
+import { useState } from 'react';
+import SecretsListModal from './SecretsListModal';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,32 +30,46 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+export default function FilesNameDisplay(props) {
 
-export default function VulnerabilityDisplay(props) {
-  return (
+    const [data, setData] = useState(null)
+    const [show, setShow] = useState(false);
+    const [filename, setFileName] = useState(null);
+
+
+  return (<>
+  {data !== null?<SecretsListModal filename={filename} show={show} module={setShow} lists={data}/>:null}
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>S No.</StyledTableCell>
-            <StyledTableCell align="right">CVE</StyledTableCell>
-            <StyledTableCell align="right">Description</StyledTableCell>
-           
+            <StyledTableCell align="right">File Name</StyledTableCell>
+            <StyledTableCell align="right">File Url</StyledTableCell>
+            <StyledTableCell align="right">Secrets Found</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.cves.map((row,index) => (
-            <StyledTableRow key={row.CVE}>
+          {props.files.map((row,index) => (
+            <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {index + 1}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.CVE}</StyledTableCell>
-              <StyledTableCell align="right">{row.description}</StyledTableCell>
-        
+              <StyledTableCell align="right">{row.file}</StyledTableCell>
+              <StyledTableCell align="right">{row.url}</StyledTableCell>
+              <StyledTableCell align="right"><Button 
+              color={row.secrets.length > 0 ? 'error' : 'success'}
+              onClick={()=>{
+                setData(row.secrets)
+                setFileName(row.file)
+                setShow(true)
+              }}
+              variant="contained">{row.secrets.length}</Button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }
