@@ -44,9 +44,9 @@ export default function FilesNameDisplay(props) {
         <TableHead>
           <TableRow>
             <StyledTableCell>S No.</StyledTableCell>
-            <StyledTableCell align="right">File Name</StyledTableCell>
-            <StyledTableCell align="right">File Url</StyledTableCell>
-            <StyledTableCell align="right">Secrets Found</StyledTableCell>
+            <StyledTableCell align="left">File Name</StyledTableCell>
+            <StyledTableCell align="left">File Url</StyledTableCell>
+            <StyledTableCell align="center">Secrets Found</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -55,9 +55,9 @@ export default function FilesNameDisplay(props) {
               <StyledTableCell component="th" scope="row">
                 {index + 1}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.file}</StyledTableCell>
-              <StyledTableCell align="right">{row.url}</StyledTableCell>
-              <StyledTableCell align="right"><Button 
+              <StyledTableCell align="left">{row.file}</StyledTableCell>
+              <StyledTableCell align="left">{row.url}</StyledTableCell>
+              <StyledTableCell align="center"><Button 
               color={row.secrets.length > 0 ? 'error' : 'success'}
               onClick={()=>{
                 setData(row.secrets)

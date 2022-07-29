@@ -51,10 +51,10 @@ export const PackageDisplay = (props) => {
         <TableHead>
           <TableRow>
             <StyledTableCell>S No.</StyledTableCell>
-            <StyledTableCell align="right">Package Name</StyledTableCell>
-            <StyledTableCell align="right">Package Version</StyledTableCell>
-            <StyledTableCell align="right">CVE's found</StyledTableCell>
-            <StyledTableCell align="right">CVSS Score</StyledTableCell>
+            <StyledTableCell align="left">Package Name</StyledTableCell>
+            <StyledTableCell align="left">Package Version</StyledTableCell>
+            <StyledTableCell align="left">CVE's found</StyledTableCell>
+            <StyledTableCell align="left">CVSS Score</StyledTableCell>
 
 
           </TableRow>
@@ -65,9 +65,9 @@ export const PackageDisplay = (props) => {
               <StyledTableCell component="th" scope="row">
                 {index + 1}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.name}</StyledTableCell>
-              <StyledTableCell align="right">{row.version}</StyledTableCell>
-              <StyledTableCell align="right"><Button onClick={()=>{
+              <StyledTableCell align="left">{row.name}</StyledTableCell>
+              <StyledTableCell align="left">{row.version}</StyledTableCell>
+              <StyledTableCell align="left"><Button onClick={()=>{
                setData(row.vulnerability) 
                setPackageName(row.name)
                setPackageVersion(row.version)
@@ -75,7 +75,7 @@ export const PackageDisplay = (props) => {
               }
                 
                 } variant="contained" color={row.vulnerability.length === 0?"success": "error"}>{row.vulnerability.length}</Button></StyledTableCell>
-              <StyledTableCell align="right">
+              <StyledTableCell align="center">
               <Box sx={{
                         backgroundColor: ColorCode(row.CVSS_Score),
                         width: 50,

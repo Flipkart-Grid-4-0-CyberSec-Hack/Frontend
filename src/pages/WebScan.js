@@ -56,7 +56,7 @@ const WebScan = ()=>{
 
     return (
         <>
-        <SpiderScanModal show={show1} module={setShow1} simple={si} ajax={ajax} url={url}/>
+        <SpiderScanModal show={show1} module={setShow1} simple={si} ajaxspider={ajax} url={url}/>
         <MainScanModal show={show2} module={setShow2} active={active} passive={passive} url={url}/>
         <HelpModal show={show} module={setShow}/>
         <TextField
