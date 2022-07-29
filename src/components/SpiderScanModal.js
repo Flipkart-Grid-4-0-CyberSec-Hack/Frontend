@@ -41,7 +41,7 @@ export default function SpiderScanModal(props) {
             {props.simple? "Spider Scan": "Ajax Spider Scan"}
           </Typography>
           <Typography fontWeight="bold" id="modal-modal-title" variant="h6" component="h2">
-            Uri to Scan : {props.url}
+            URI to Scan : {props.url}
           </Typography>
           
           {load?(

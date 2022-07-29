@@ -6,13 +6,13 @@ export const Footer = () => {
         <div className="row">
           <div className="col-lg-6 col-xs-12 about-company">
             <h2>
-              <img src="/images/logo.png" alt="" width="25" /> Security
+              <img src="/images/logo.png" alt="" width="40" /> Security
               Inspector
             </h2>
             <p className="pr-5 text-white-50">
-              Check all the repos for possible vulnebralities
+              Scan all the repositories for the possible vulnebralities.
             </p>
-            <p>
+            <p> 
               <a href="#">
                 <i className="fa fa-facebook-square mr-1"></i>
               </a>
