@@ -8,6 +8,9 @@ import axios from 'axios';
 import ErrorModal from '../components/ErrorModal';
 import {Button} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
+import {Box} from '@mui/material';
+import {Grid} from '@mui/material';
+import { ColorCode } from '../constants';
 
 function validate(string){
     let url;
@@ -72,6 +75,22 @@ export const Home = () => {
                  <LoadingWidget/>
                  </Container>
             ) : null}
+            
+            {data !== null ? (
+                <Grid container sx={{my:2}}>
+                <Grid item sm={4}>
+                <Typography variant="h5" fontWeight="bold">CVSS Score of Repository: </Typography>
+                </Grid>
+                <Grid item>
+                <Typography variant="h6" fontWeight="bold"><Box sx={{
+                                        backgroundColor: ColorCode(data.CVSS_Score),
+                                        width: 80,
+                                        color: 'white',
+                            }}>{data.CVSS_Score.toFixed(2)}</Box></Typography>
+                            </Grid>
+                    </Grid>
+            ) : null}
+           
            {data !== null ?<PackageDisplay info={data.packages}/> : null}
            {data !== null && data.projecturl !== null? <Button sx={{my:2}} variant="contained" color="warning" onClick={()=>{
             localStorage.setItem("projecturl",data.projecturl);
@@ -86,6 +105,8 @@ export const Home = () => {
 
             navigate("/web")
            }}>Secret Scan Section</Button> : null}
+
+           
 
             </Container>
         </>

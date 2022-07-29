@@ -9,6 +9,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import CVEListModal from "./CVEListModal";
+import { Box } from "@mui/material";
+import { ColorCode } from "../constants";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -52,6 +54,9 @@ export const PackageDisplay = (props) => {
             <StyledTableCell align="right">Package Name</StyledTableCell>
             <StyledTableCell align="right">Package Version</StyledTableCell>
             <StyledTableCell align="right">CVE's found</StyledTableCell>
+            <StyledTableCell align="right">CVSS Score</StyledTableCell>
+
+
           </TableRow>
         </TableHead>
         <TableBody>
@@ -70,6 +75,17 @@ export const PackageDisplay = (props) => {
               }
                 
                 } variant="contained" color={row.vulnerability.length === 0?"success": "error"}>{row.vulnerability.length}</Button></StyledTableCell>
+              <StyledTableCell align="right">
+              <Box sx={{
+                        backgroundColor: ColorCode(row.CVSS_Score),
+                        width: 50,
+                        height: 50,
+                        p:2,
+                        color: 'white',
+                        fontSize : '0.9rem',
+                        fontWeight:'bold'
+                            }}>
+                {row.CVSS_Score.toFixed(2)}</Box></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

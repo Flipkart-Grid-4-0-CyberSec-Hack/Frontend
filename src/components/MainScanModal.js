@@ -58,7 +58,7 @@ export default function MainScanModal(props) {
               setLoad(true)
               var config = {
                 method: 'get',
-                url: `http://localhost:8000/runscan?url=${props.url}&passive=${props.passive.toString()}&active=${props.active.toString()}`,
+                url: `http://localhost:8000/runscan?url=${props.url}&passive=${props.passive}&active=${props.active}`,
               
               };
 

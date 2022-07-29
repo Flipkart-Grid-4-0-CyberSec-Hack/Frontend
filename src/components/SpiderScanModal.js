@@ -59,7 +59,7 @@ export default function SpiderScanModal(props) {
               setLoad(true)
               var config = {
                 method: 'get',
-                url: `http://localhost:8000/runscan?url=${props.url}&spider=${props.simple.toString()}&ajaxspider=${props.ajaxspider.toString()}`,
+                url: `http://localhost:8000/runscan?url=${props.url}&spider=${props.simple}&ajaxspider=${props.ajaxspider}`,
               
               };
 
