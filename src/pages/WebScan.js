@@ -75,6 +75,8 @@ const WebScan = ()=>{
                 setError(false)
                 si = true
                 ajax = false
+                active=false
+                passive=false
                 setShow1(true)
 
             }else setError(true)
@@ -84,6 +86,8 @@ const WebScan = ()=>{
                 setError(false)
                 si = false 
                 ajax = true
+                active=false
+                passive=false
                 setShow1(true)
 
             }else setError(true)
@@ -91,6 +95,8 @@ const WebScan = ()=>{
          <Button onClick={()=>{
              if(validate(url)){
                 setError(false)
+                si = false 
+                ajax = false
                 active = false
                 passive = true
                 setShow2(true)
@@ -100,6 +106,8 @@ const WebScan = ()=>{
          <Button onClick={()=>{
              if(validate(url)){            
                 setError(false)
+                si = false 
+                ajax = false
                 active = true
                 passive = false
                 

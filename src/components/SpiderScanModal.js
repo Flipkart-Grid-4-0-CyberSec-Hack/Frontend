@@ -49,9 +49,15 @@ export default function SpiderScanModal(props) {
             <LoadingWidget/>
             </Container>
           ): null}
-          {data !== null ? (
+          {data !== null && props.simple===true ? (
              <Container sx={{my:3}}>
             <SecretList list={data}/>
+            </Container>
+          ): null}
+
+          {data !== null && props.ajaxspider===true ? (
+             <Container sx={{my:3}}>
+            <SecretList list={data.map((element)=>{return element.requestHeader})}/>
             </Container>
           ): null}
 
@@ -68,6 +74,7 @@ export default function SpiderScanModal(props) {
                 localStorage.setItem('spider','true')
                   setLoad(false)
                   setData(response.data)
+                  console.log(response.data)
                 })
               .catch(function (error) {
                   setLoad(false)
