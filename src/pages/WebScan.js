@@ -59,6 +59,7 @@ const WebScan = ()=>{
         <SpiderScanModal show={show1} module={setShow1} simple={si} ajaxspider={ajax} url={url}/>
         <MainScanModal show={show2} module={setShow2} active={active} passive={passive} url={url}/>
         <HelpModal show={show} module={setShow}/>
+        <Typography variant="h3" fontWeight="bold" sx={{my:5}}>Web App Scanner</Typography>
         <TextField
         error={error}
           sx={{my:5,width: '40%'}}
@@ -68,7 +69,6 @@ const WebScan = ()=>{
           label="Web Application URI"
           helperText={"E.g.: https://www.example.com"}
         />
-            <Typography variant="h3" fontWeight="bold" sx={{my:5}}>Web App Scanner</Typography>
          <Container sx={{minHeight:'50vh'}}>
          <Button onClick={()=>{
             if(validate(url)){
